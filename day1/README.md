@@ -153,5 +153,23 @@ call 1.bat
 
 ```shell
 tasklist #查看所有的正在运行的进程  （.exe)
+# 筛选器
+tasklist /FI "STATUS eq RUNNING" 
+#查看所有处于”RUNNING"状态的任务
+```
 
+## 任务关闭命令
+
+```shell
+taskkill
+taskkill /IM notepad.exe
+#向所有的记事本进程发送关闭的信号
+####################
+成功: 给进程 "notepad.exe" 发送了终止信号，进程的 PID 为 18220。
+成功: 给进程 "notepad.exe" 发送了终止信号，进程的 PID 为 12284。
+####################
+# 有时候使用/F来强制关闭
+# /T关闭进程和相对应的子进程
+# 近期在使用idea开发应用就碰到了进程占用无法关闭的问题
+#结合tasklist和taskkill可完美地解决
 ```
